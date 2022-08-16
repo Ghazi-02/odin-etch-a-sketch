@@ -1,0 +1,30 @@
+body{
+display: flex;
+justify-content: center;
+height: 50;
+
+}
+
+pixel{
+
+border: solid 1px;
+padding: 7px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgb(192, 71, 71);
+
+}
+#container{
+max-height: 256px;
+max-width: 256px;
+display: flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items: center;
+}
+.black
+{
+
+    background-color: black;
+}
