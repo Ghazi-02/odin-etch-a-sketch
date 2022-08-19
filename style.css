@@ -4,13 +4,7 @@ justify-content: center;
 
 
 }
-
-
-.black
-{
-
-    background-color: black;
-}
+   
 pixel{
 
     
@@ -27,3 +21,17 @@ flex-wrap:wrap;
 border: solid 2px;
 
 }
+.buttons{
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+    
+}
+
+
+
+.blck{margin: 8px;}
+
+.rgb{margin: 8px;}
+
+.reset{margin: 8px;}
