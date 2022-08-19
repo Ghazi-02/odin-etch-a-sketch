@@ -1,21 +1,39 @@
+let x = parseInt(prompt("Enter a Value", "0"), 10);
+
 const container = document.querySelector('#container')
+     container.setAttribute('style',
+    `width: ${Math.pow(x,2)}px;
+     height: ${Math.pow(x,2)}px;
+     `);
+     
 
-let x = 16
+      
 
 
 
- function grid(){
 
+
+
+function grid(){
+  for(let n = 0; n < x; n++){
+     for(let i = 0; i < x; i++){
     
-    for(let i = 0; i < Math.pow(x,2); i++){
-
-    const pixel = document.createElement('pixel');
-    container.appendChild(pixel);
-
+        const pixel = document.createElement('div');
+            container.appendChild(pixel);
+    
+            pixel.setAttribute('style',
+            `width: ${Math.pow(x,1)}px;
+             height: ${Math.pow(x,1)}px;
+             `)
+            
+            
+    
     }
+}
+} 
+       
+    
+    grid();
 
- }
-
-
-grid();
+  
 
