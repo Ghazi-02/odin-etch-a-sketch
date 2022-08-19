@@ -26,6 +26,9 @@ function grid(){
              height: ${Math.pow(x,1)}px;
              `)
             
+             pixel.addEventListener('mouseover', () => {
+                pixel.style.backgroundColor = "black";
+                });
             
     
     }
