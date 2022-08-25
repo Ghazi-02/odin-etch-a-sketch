@@ -1,76 +1,119 @@
-let x =parseInt(prompt("Enter a Value", "16"), 10);
 const blck = document.querySelector('.blck')
 const reset = document.querySelector('.reset')
 const rgb = document.querySelector('.rgb')
+const small = document.querySelector('.small')
+const medium = document.querySelector('.medium')
+const large = document.querySelector('.large')
+const size = document.querySelector('.size')
 const container = document.querySelector('#container')
-     container.setAttribute('style',
-    `width: ${Math.pow(x,2)}px;
-     height: ${Math.pow(x,2)}px;
-     `);
-     
-
-      
-
-     function getRandomRgb() {
-        var num = Math.round(0xffffff * Math.random());
-        var r = num >> 16;
-        var g = num >> 8 & 255;
-        var b = num & 255;
-        return 'rgb(' + r + ', ' + g + ', ' + b + ')';
-      }
+let largeGrid = document.querySelector('#large');
+let mediumGrid = document.querySelector('#medium');
+let smallGrid = document.querySelector('#small');
+function getRandomRgb() {
+    var num = Math.round(0xffffff * Math.random());
+    var r = num >> 16;
+    var g = num >> 8 & 255;
+    var b = num & 255;
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
 
 
 
 
-function grid(){
-  for(let n = 0; n < x; n++){
-     for(let i = 0; i < x; i++){
-    
-        const pixel = document.createElement('div');
+
+
+
+
+function generateGrid(gridSize = 16) {
+
+
+    container.setAttribute('style',
+        `width: ${Math.pow(gridSize,2)}px;
+   height: ${Math.pow(gridSize,2)}px;
+   `);
+
+
+
+
+    for (let n = 0; n < gridSize; n++) {
+        for (let i = 0; i < gridSize; i++) {
+
+
+
+            let pixel = document.createElement('div');
+
+
             container.appendChild(pixel);
-    
+
+
+
+
             pixel.setAttribute('style',
-            `width: ${Math.pow(x,1)}px;
-             height: ${Math.pow(x,1)}px;
+                `width: ${gridSize}px;
+             height: ${gridSize}px;
              `)
-             blck.addEventListener('click',()=>{
+
+
+
+
+            blck.addEventListener('click', () => {
                 pixel.addEventListener('mouseover', () => {
-                pixel.style.backgroundColor = "black";
-                     });
-                    
-
-            });rgb.addEventListener('click',()=>{
-                
-                    pixel.addEventListener('mouseover', () => {
-                     pixel.style.backgroundColor = `${getRandomRgb()} `  
-                    
-                    })
+                    pixel.style.backgroundColor = "black";
+                });
 
 
-            })
-                
-                
-                
-                
-                reset.addEventListener('click',()=>{
-                    pixel.querySelectorAll('div');
-                    pixel.style.backgroundColor = "white";
-                
+            });
+            rgb.addEventListener('click', () => {
+
+                pixel.addEventListener('mouseover', () => {
+                    pixel.style.backgroundColor = `${getRandomRgb()} `
+
+                })
 
 
-             })
-             
-             
-             
-             
-              
-    
+            });
+
+
+
+
+            reset.addEventListener('click', () => {
+                pixel.querySelectorAll('div');
+                pixel.style.backgroundColor = "antiquewhite";
+
+
+
+
+            });
+
     }
 }
-} 
-       
-    
-    
+}
+generateGrid();
 
-  
-grid();
+
+
+smallGrid.addEventListener('click', () => {
+
+   while (container.firstChild) {
+       container.removeChild(container.lastChild)
+
+   } generateGrid(8)
+});
+
+
+
+mediumGrid.addEventListener('click', () => {
+
+   while (container.firstChild) {
+      container.removeChild(container.lastChild) 
+   } generateGrid(16)
+});
+
+
+
+largeGrid.addEventListener('click', () => {
+
+   while (container.firstChild) {
+      container.removeChild(container.lastChild) 
+   } generateGrid(24)
+});

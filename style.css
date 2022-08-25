@@ -1,6 +1,7 @@
 body{
 display: flex;
 justify-content: center;
+background-color: antiquewhite;
 
 
 }
@@ -18,20 +19,32 @@ display: flex;
 #container{
 display: flex;
 flex-wrap:wrap;
-border: solid 2px;
-
+border: rgb(197, 160, 105) solid 2px;
+border-radius: 4px;
 }
-.buttons{
+.buttons,on click{
     display: flex;
     flex-direction: column;
     margin: 16px;
     
 }
 
+button{
+width:  100px;
+    background-color: bisque;
+border: rgb(197, 160, 105) solid 2px;
+border-radius: 4px;
+color:rgb(128, 99, 56) ;
+}
 
 
-.blck{margin: 8px;}
+button:active{
 
-.rgb{margin: 8px;}
+    background-image: linear-gradient(rgb(235, 199, 150) 0 0);
 
-.reset{margin: 8px;}
+}
+
+.blck, .rgb, .reset, .size{
+    margin: 8px;
+}
+
